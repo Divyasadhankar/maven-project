@@ -63,7 +63,10 @@ object Build : BuildType({
                 source = file {
                     path = ".teamcity"
                 }
-                namesAndTags = "divyasadhankar/mydemorepo"
+                namesAndTags = """
+                    divyasadhankar/mydemorepo:myapp-9.0-%build.number%
+                    divyasadhankar/mydemorepo:latest
+                """.trimIndent()
                 commandArgs = "--pull"
             }
         }
