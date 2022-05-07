@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -35,6 +36,13 @@ object Build : BuildType({
 
     vcs {
         root(DslContext.settingsRoot)
+    }
+
+    steps {
+        gradle {
+            name = "build application"
+            tasks = "clean build"
+        }
     }
 
     triggers {
