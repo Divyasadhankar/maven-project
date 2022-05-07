@@ -47,6 +47,10 @@ object Build : BuildType({
             name = "maven build"
             goals = "build"
         }
+        maven {
+            name = "maven test"
+            goals = "test"
+        }
     }
 
     triggers {
