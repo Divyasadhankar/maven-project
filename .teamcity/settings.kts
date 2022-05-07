@@ -55,6 +55,7 @@ object Build : BuildType({
         gradle {
             name = "build application"
             tasks = "clean build"
+            buildFile = ".teamcity"
         }
         dockerCommand {
             name = "build image"
