@@ -40,10 +40,6 @@ object Build : BuildType({
 
     steps {
         maven {
-            name = "maven build"
-            goals = "build"
-        }
-        maven {
             name = "maven test"
             goals = "test"
         }
