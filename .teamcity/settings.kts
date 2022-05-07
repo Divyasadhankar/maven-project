@@ -62,10 +62,7 @@ object Build : BuildType({
                 source = file {
                     path = "dockerfile"
                 }
-                namesAndTags = """
-                    divyasadhankar/mydemorepo:myapp-9.0-%build.number%
-                    divyasadhankar/mydemorepo:latest
-                """.trimIndent()
+                namesAndTags = "divyasadhankar/mydemorepo"
                 commandArgs = "--pull"
             }
         }
