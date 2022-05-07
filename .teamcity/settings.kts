@@ -61,7 +61,7 @@ object Build : BuildType({
             name = "build image"
             commandType = build {
                 source = file {
-                    path = "dockerfile"
+                    path = ".teamcity"
                 }
                 namesAndTags = "divyasadhankar/mydemorepo"
                 commandArgs = "--pull"
