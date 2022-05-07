@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
@@ -42,6 +43,19 @@ object Build : BuildType({
         gradle {
             name = "build application"
             tasks = "clean build"
+        }
+        dockerCommand {
+            name = "build image"
+            commandType = build {
+                source = file {
+                    path = "dockerfile"
+                }
+                namesAndTags = """
+                    divyasadhankar/mydemorepo:myapp-9.0-%build.number%
+                    divyasadhankar/mydemorepo:latest
+                """.trimIndent()
+                commandArgs = "--pull"
+            }
         }
     }
 
