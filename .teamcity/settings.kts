@@ -47,6 +47,8 @@ project {
 object Build : BuildType({
     name = "Build"
 
+    artifactRules = "https://github.com/Divyasadhankar/maven-project.git"
+
     vcs {
         root(DslContext.settingsRoot)
     }
