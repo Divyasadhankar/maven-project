@@ -57,6 +57,14 @@ object Build : BuildType({
                 commandArgs = "--pull"
             }
         }
+        dockerCommand {
+            commandType = push {
+                namesAndTags = """
+                    divyasadhankar/mydemorepo:myapp-9.0-%build.number%
+                    divyasadhankar/mydemorepo:latest
+                """.trimIndent()
+            }
+        }
     }
 
     triggers {
