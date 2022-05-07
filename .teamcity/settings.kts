@@ -36,7 +36,20 @@ object Build : BuildType({
     vcs {
         root(DslContext.settingsRoot)
     }
-
+    
+    steps {
+        script {
+            name = "Install npn packages"
+            scriptContent = """ npm install """
+        }
+        
+        scrpt {
+            name = "Run tests"
+            scriptContent = """ npm run verify """
+            
+        }
+    }
+    
     triggers {
         vcs {
         }
